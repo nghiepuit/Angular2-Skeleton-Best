@@ -1,0 +1,8 @@
+.martop40 {
+    margin: 5% 0;
+}
+
+.active a.page-link:hover{
+    color: white !important;
+    text-decoration: none;
+}

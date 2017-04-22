@@ -1,0 +1,46 @@
+<div class="card martop40">
+    <!--Card content-->
+    <div class="card-block">
+        <!--Title-->
+        <div class="form-header">
+            <h3><i class="fa fa-cubes"></i> {{ title }}</h3>
+        </div>
+        <!--Text-->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <fieldset class="form-group">
+                            <input type="checkbox" id="ckbAll">
+                            <label for="ckbAll"></label>
+                        </fieldset>
+                    </th>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let customer of customers; let i = index">
+                    <th>
+                        <fieldset class="form-group">
+                            <input type="checkbox" id="ckb{{index}}">
+                            <label for="ckb{{index}}"></label>
+                        </fieldset>
+                    </th>
+                    <th scope="row">1</th>
+                    <td>Abby</td>
+                    <td>Barrett</td>
+                    <td>@abbeme</td>
+                    <td>
+                        <a class="teal-text"><i class="fa fa-pencil"></i></a>
+                        <a class="red-text"><i class="fa fa-times"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--/.Card content-->
+</div>
