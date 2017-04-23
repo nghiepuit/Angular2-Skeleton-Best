@@ -12,13 +12,16 @@ import { SortPipe } from './pipes/sort.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 // Pagination Module - Third Party
 import { NgxPaginationModule } from 'ngx-pagination';
+// Translate
+import { TranslateModule } from 'ng2-translate';
 
 @NgModule({
   imports: [
     CommonModule,
     SecureRoutingModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    TranslateModule
   ],
   declarations: [
     SecureComponent,

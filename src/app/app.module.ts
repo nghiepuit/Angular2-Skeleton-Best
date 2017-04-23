@@ -8,11 +8,12 @@ import { NotFoundComponent } from './shared/components/not-found/not-found.compo
 // Module
 import { AppRoutingModule } from './app-routing.module';
 // Third-Party Module
-import {TranslateModule, TranslateLoader} from "@ngx-translate/core";
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule, MissingTranslationHandler, TranslateStaticLoader, TranslateLoader } from 'ng2-translate';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { MyMissingTranslationHandler } from './missingtemplate.component';
 
-export function HttpLoaderFactory(http: Http) {
-    return new TranslateHttpLoader(http);
+export function createTranslateLoader(http: Http) {
+    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -25,15 +26,17 @@ export function HttpLoaderFactory(http: Http) {
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    TranslateModule.forRoot({
-      loader: {
+    TranslateModule.forRoot(
+      { 
         provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
+        useFactory: (createTranslateLoader),
         deps: [Http]
       }
-    })
+    )
   ],
-  providers: [],
+  providers: [
+    { provide: MissingTranslationHandler, useClass: MyMissingTranslationHandler}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

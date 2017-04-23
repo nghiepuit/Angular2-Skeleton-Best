@@ -5,14 +5,19 @@ import { PublicComponent }           from './public.component';
 import { LoginComponent } from './components/login/login.component';
 import { PublicRoutingModule }       from './public-routing.module';
 
+// Translate
+import { TranslateModule } from 'ng2-translate';
+
 @NgModule({
   imports: [
     CommonModule,
-    PublicRoutingModule
+    PublicRoutingModule,
+    TranslateModule
   ],
   declarations: [
     PublicComponent,
     LoginComponent
-  ]
+  ],
+  providers: [],
 })
 export class PublicModule {}

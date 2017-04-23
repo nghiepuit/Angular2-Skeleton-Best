@@ -7,27 +7,31 @@
                 <div class="card-block">
                     <!--Header-->
                     <div class="form-header">
-                        <h3><i class="fa fa-lock"></i> Login:</h3>
+                        <h3><i class="fa fa-lock"></i> {{ 'FormLogin.title' | translate }}</h3>
                     </div>
                     <!--Body-->
                     <div class="md-form">
                         <i class="fa fa-envelope prefix"></i>
                         <input type="text" id="form2" class="form-control">
-                        <label for="form2">Your email</label>
+                        <label for="form2">{{ 'FormLogin.fEmail' | translate }}</label>
                     </div>
                     <div class="md-form">
                         <i class="fa fa-lock prefix"></i>
                         <input type="password" id="form4" class="form-control">
-                        <label for="form4">Your password</label>
+                        <label for="form4">{{ 'FormLogin.fPassword' | translate }}</label>
                     </div>
                     <div class="text-center">
-                        <button class="btn btn-primary waves-effect waves-light" [routerLink]="['/admin/users']">Login</button>
+                        <button class="btn btn-primary waves-effect waves-light" [routerLink]="['/admin/users']">
+                            {{ 'FormLogin.btnLogin' | translate }}
+                        </button>
                     </div>
                 </div>
                 <!--Footer-->
                 <div class="modal-footer text-center">
-                    Or login with
-                    <button type="button" class="btn btn-gplus waves-effect waves-light"><i class="fa fa-google left"></i> Google</button>
+                    {{ 'FormLogin.txtOrLoginWith' | translate }}
+                    <button type="button" class="btn btn-gplus waves-effect waves-light">
+                        <i class="fa fa-google left"></i> {{ 'FormLogin.btnGoogle' | translate }}
+                    </button>
                 </div>
             </div>
             <!--/Form with header-->
