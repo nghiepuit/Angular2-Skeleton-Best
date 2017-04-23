@@ -30,10 +30,19 @@
                         </fieldset>
                     </th>
                     <th>#</th>
-                    <th (click)="sort('name')">{{ 'tbUser.lbName' | translate }}</th>
-                    <th (click)="sort('company')">{{ 'tbUser.lbCompany' | translate }}</th>
+                    <th>
+                        <span class="pointer" (click)="sort('name')">{{ 'tbUser.lbName' | translate }}</span>
+                        <i (click)="sort('name')" class="fa fa-arrows-v pointer" aria-hidden="true"></i>
+                    </th>
+                    <th>
+                        <span class="pointer" (click)="sort('company')">{{ 'tbUser.lbCompany' | translate }}</span>
+                        <i (click)="sort('company')" class="fa fa-arrows-v pointer" aria-hidden="true"></i>
+                    </th>
                     <th>{{ 'tbUser.lbAction' | translate }}</th>
-                    <th (click)="sort('id')">{{ 'tbUser.lbID' | translate }}</th>
+                    <th>
+                        <span class="pointer" (click)="sort('id')">{{ 'tbUser.lbID' | translate }}</span>
+                        <i (click)="sort('id')" class="fa fa-arrows-v pointer" aria-hidden="true"></i>
+                    </th>
                 </tr>
             </thead>
             <tbody>

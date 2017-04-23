@@ -10,7 +10,7 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  private subscription: Subscription;
+  	private subscription: Subscription;
 
 	constructor(private translate: TranslateService, private activatedRoute: ActivatedRoute) {
 	    translate.addLangs(["en", "fr", "cn", "hi"]);
