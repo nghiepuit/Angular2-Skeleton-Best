@@ -1,3 +1,9 @@
 .margin1020{
 	margin: 10px 20px;
 }
+
+.img-icon-multilanguage{
+	max-height: 30px; 
+	float: left; 
+	margin-right: 10px;
+}

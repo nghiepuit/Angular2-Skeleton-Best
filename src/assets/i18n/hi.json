@@ -56,6 +56,19 @@
         "btnLogin" : "साइट  साइट साइट",
         "txtOrLoginWith" : "साइट साइट साइटसाइट साइट साइट",
         "btnGoogle" : "साइट साइट"
+    },
+    "Users" : "साइट",
+    "Customers" : "टिप्पणी",
+    "tbUser" : {
+        "title" : "साइसइट",
+        "lbName" : "साइसाट",
+        "lbCompany" : "साटसाइट",
+        "lbAction" : "सटसाइट",
+        "lbID" : "साइट"
+    },
+    "Pagination" : {
+        "first" : "सा",
+        "last" : "Lसटe"
     }
   }
   

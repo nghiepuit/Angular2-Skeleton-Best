@@ -56,5 +56,18 @@
         "btnLogin" : "Entrez vos commentaires",
         "txtOrLoginWith" : "Entrez Site vos",
         "btnGoogle" : "Envoyer GOOGLE"
+    },
+    "Users" : "Entrez",
+    "Customers" : "Cummentaires",
+    "tbUser" : {
+        "title" : "Tontle",
+        "lbName" : "Nome",
+        "lbCompany" : "Compony",
+        "lbAction" : "Actiez",
+        "lbID" : "En"
+    },
+    "Pagination" : {
+        "first" : "Firse",
+        "last" : "Lirse"
     }
   }

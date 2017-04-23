@@ -3,7 +3,7 @@
     <div class="card-block">
         <!--Title-->
         <div class="form-header">
-            <h3><i class="fa fa-user"></i> {{ title }}</h3>
+            <h3><i class="fa fa-user"></i> {{ 'tbUser.title' | translate }}</h3>
         </div>
         <!--Text-->
         <table class="table">
@@ -25,15 +25,15 @@
                 <tr>
                     <th>
                         <fieldset class="form-group">
-                            <input type="checkbox" id="ckbAll">
+                            <input type="checkbox" id="ckbAll" [(ngModel)]="selectedAll">
                             <label for="ckbAll"></label>
                         </fieldset>
                     </th>
                     <th>#</th>
-                    <th (click)="sort('name')">Name</th>
-                    <th (click)="sort('company')">Company</th>
-                    <th>Actions</th>
-                    <th (click)="sort('id')">ID</th>
+                    <th (click)="sort('name')">{{ 'tbUser.lbName' | translate }}</th>
+                    <th (click)="sort('company')">{{ 'tbUser.lbCompany' | translate }}</th>
+                    <th>{{ 'tbUser.lbAction' | translate }}</th>
+                    <th (click)="sort('id')">{{ 'tbUser.lbID' | translate }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,8 +42,8 @@
                                                 | paginate :config ; let i = index ">
                     <th>
                         <fieldset class="form-group">
-                            <input type="checkbox" id="ckb{{index}}">
-                            <label for="ckb{{index}}"></label>
+                            <input type="checkbox" id="ckb{{i}}" [checked]="selectedAll">
+                            <label for="ckb{{i}}"></label>
                         </fieldset>
                     </th>
                     <th scope="row ">{{ i }}</th>
@@ -63,8 +63,8 @@
             <ul class="pagination">
                 <li class="page-item" [class.disabled]="p.isFirstPage()">
                     <a class="page-link" aria-label="Previous" (click)="p.setCurrent(1)">
-                        <span aria-hidden="true">First</span>
-                        <span class="sr-only">First</span>
+                        <span aria-hidden="true">{{ 'Pagination.first' | translate }}</span>
+                        <span class="sr-only">{{ 'Pagination.first' | translate }}</span>
                     </a>
                 </li>
                 <li class="page-item" [class.disabled]="p.isFirstPage()">
@@ -87,8 +87,8 @@
                 </li>
                 <li class="page-item" [class.disabled]="p.isLastPage()">
                     <a class="page-link" aria-label="Next" (click)="p.setCurrent(p.getLastPage())">
-                        <span aria-hidden="true">Last</span>
-                        <span class="sr-only">Last</span>
+                        <span aria-hidden="true">{{ 'Pagination.last' | translate }}</span>
+                        <span class="sr-only">{{ 'Pagination.last' | translate }}</span>
                     </a>
                 </li>
             </ul>

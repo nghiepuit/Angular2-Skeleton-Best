@@ -1,1 +1,15 @@
+<div class="pull-right margin1020">
+    <div class="dropdown">
+        <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ 'Sel_lang' | translate }}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
+            <a class="dropdown-item" (click)="changeLanguage('en')">{{ 'Languages.English' | translate }}</a>
+            <a class="dropdown-item" (click)="changeLanguage('vi')">{{ 'Languages.VietNam' | translate }}</a>
+            <a class="dropdown-item" (click)="changeLanguage('fr')">{{ 'Languages.French' | translate }}</a>
+            <a class="dropdown-item" (click)="changeLanguage('cn')">{{ 'Languages.Chinese' | translate }}</a>
+            <a class="dropdown-item" (click)="changeLanguage('hi')">{{ 'Languages.Hindi' | translate }}</a>
+        </div>
+    </div>
+</div>
 <router-outlet></router-outlet>

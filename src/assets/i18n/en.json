@@ -56,5 +56,18 @@
         "btnLogin" : "LOGIN",
         "txtOrLoginWith" : "Or login with",
         "btnGoogle" : "GOOGLE"
+    },
+    "Users" : "User",
+    "Customers" : "Customers",
+    "tbUser" : {
+        "title" : "User",
+        "lbName" : "Name",
+        "lbCompany" : "Company",
+        "lbAction" : "Action",
+        "lbID" : "ID"
+    },
+    "Pagination" : {
+        "first" : "First",
+        "last" : "Last"
     }
   }

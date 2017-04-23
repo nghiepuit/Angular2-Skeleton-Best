@@ -55,5 +55,18 @@
         "btnLogin" : "网站",
         "txtOrLoginWith" : "网站 网站 网站",
         "btnGoogle" : "网站"
+    },
+    "Users" : "网站",
+    "Customers" : "输入网站",
+    "tbUser" : {
+        "title" : "网站",
+        "lbName" : "输入",
+        "lbCompany" : "入",
+        "lbAction" : "步行",
+        "lbID" : "行"
+    },
+    "Pagination" : {
+        "first" : "步",
+        "last" : "行"
     }
   }

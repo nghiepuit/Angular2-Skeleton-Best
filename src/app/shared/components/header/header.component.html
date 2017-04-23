@@ -16,9 +16,11 @@
         <!-- Side navigation links -->
         <li>
             <ul class="collapsible collapsible-accordion">
-                <li><a class="collapsible-header waves-effect arrow-r" routerLinkActive="active" [routerLink]="['/admin/users']"><i class="fa fa-user"></i> Users</a>
+                <li>
+                    <a class="collapsible-header waves-effect arrow-r" routerLinkActive="active" [routerLink]="['/admin/users']"><i class="fa fa-user"></i>{{ 'Users' | translate }}</a>
                 </li>
-                <li><a class="collapsible-header waves-effect arrow-r" routerLinkActive="active" [routerLink]="['/admin/customers']"><i class="fa fa-cubes"></i> Customers</a>
+                <li>
+                    <a class="collapsible-header waves-effect arrow-r" routerLinkActive="active" [routerLink]="['/admin/customers']"><i class="fa fa-cubes"></i>{{ 'Customers' | translate }}</a>
                 </li>
             </ul>
         </li>
@@ -34,9 +36,36 @@
         </div>
         <!-- Breadcrumb-->
         <div class="breadcrumb-dn mr-auto">
-            <p>Dashboard</p>
+            <p>{{ 'HomeLink' | translate }}</p>
         </div>
         <ul class="nav navbar-nav nav-flex-icons ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-flag"></i> <span class="hidden-sm-down">{{ 'Sel_lang' | translate }}</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" (click)="changeLanguage('en')">
+                        <img class="img-icon-multilanguage" src="http://icons.iconarchive.com/icons/icons-land/vista-flags/256/English-Language-Flag-1-icon.png" />
+                        {{ 'Languages.English' | translate }}
+                    </a>
+                    <a class="dropdown-item" (click)="changeLanguage('vi')">
+                        <img class="img-icon-multilanguage" src="http://www.iconarchive.com/download/i49056/custom-icon-design/all-country-flag/Vietnam-Flag.ico" />
+                        {{ 'Languages.VietNam' | translate }}
+                    </a>
+                    <a class="dropdown-item" (click)="changeLanguage('fr')">
+                        <img class="img-icon-multilanguage" src="https://cdn3.iconfinder.com/data/icons/finalflags/256/France-Flag.png" />
+                        {{ 'Languages.French' | translate }}
+                    </a>
+                    <a class="dropdown-item" (click)="changeLanguage('cn')">
+                        <img class="img-icon-multilanguage" src="http://icons.iconarchive.com/icons/custom-icon-design/flag-2/256/China-Flag-icon.png" />
+                        {{ 'Languages.Chinese' | translate }}
+                    </a>
+                    <a class="dropdown-item" (click)="changeLanguage('hi')">
+                        <img class="img-icon-multilanguage" src="http://www.iconarchive.com/download/i65877/hopstarter/flag-borderless/India.ico" />
+                        {{ 'Languages.Hindi' | translate }}
+                    </a>
+                </div>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-user"></i> <span class="hidden-sm-down">Administrator</span>

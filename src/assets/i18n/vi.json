@@ -56,5 +56,18 @@
         "btnLogin" : "ĐĂNG NHẬP",
         "txtOrLoginWith" : "Hoặc đăng nhập với",
         "btnGoogle" : "GOOGLE"
+    },
+    "Users" : "Quản Lý Người Dùng",
+    "Customers" : "Quản Lý Khách Hàng",
+    "tbUser" : {
+        "title" : "Danh Sách Người Dùng",
+        "lbName" : "Họ Tên",
+        "lbCompany" : "Công Ty",
+        "lbAction" : "Hành Động",
+        "lbID" : "Mã"
+    },
+    "Pagination" : {
+        "first" : "Trang Đầu",
+        "last" : "Trang Cuối"
     }
   }
