@@ -9996,3 +9996,123 @@ aside.desktop-collapse ul li a.menu-elem .title {
         margin-top: 8px;
     }
 }
+
+
+// -------------- table-custom.css
+
+
+.table {
+    margin-bottom: 0;
+}
+
+.table label.mt-checkbox {
+    padding-left: 18px;
+}
+
+.table th .form-control,
+.table td .form-control {
+    margin-bottom: 0;
+}
+
+.table th {
+    text-align: center;
+    background-color: #f5f5f5;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.5rem;
+}
+
+.table th a,
+.table th a:hover,
+.table th a:focus,
+.table th a:active {
+    text-decoration: none;
+    color: #333;
+}
+
+.table th p.th-break-wapper {
+    margin-bottom: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.table tr th,
+.table tr td {
+    font-family: 'Roboto Condensed', sans-serif;
+    vertical-align: middle !important;
+}
+
+.table tr th a,
+.table tr td a {
+    cursor: pointer;
+}
+
+.table-display-control {
+    text-align: center;
+}
+
+.table-display-control select {
+    display: inline-block;
+    width: auto;
+    margin: 0;
+}
+
+.pagination-wrapper {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.pagination-wrapper ul {
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .pagination-wrapper {
+        margin-top: 0px;
+        text-align: right;
+    }
+    .table-display-control {
+        text-align: left;
+    }
+}
+
+.td-nowrap {
+    white-space: nowrap;
+}
+
+.caret-down {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid \9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+.caret-down.active {
+    color: #e51938;
+}
+
+.caret-up {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-bottom: 4px dashed;
+    border-bottom: 4px solid \9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+.caret-up.active {
+    color: #e51938;
+}
+
+.title-wrapper {
+    position: relative;
+}
+
+
