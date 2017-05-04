@@ -1,0 +1,7 @@
+<router-outlet name="header"></router-outlet>
+<div class="main-container">
+    <div class="main-wrapper">
+        <router-outlet name="sidebar"></router-outlet>
+        <router-outlet></router-outlet>
+    </div>
+</div>
