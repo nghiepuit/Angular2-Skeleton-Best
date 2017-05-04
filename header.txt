@@ -1,0 +1,85 @@
+<nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" id="btn-menu-toggle" (click)="menuAside()">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" [ngClass]=[_globalcollapse.desktopCollapse] href="javascript:void(0)">
+                <img src="assets/images/pokka-logo-red.png" alt="">
+                <button type="button" class="navbar-toggle-desktop hidden-xs hidden-sm hidden-mobile" (click)="menuCollapse()" id="btn-menu-toggle-desktop">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </a>
+            <div class="navbar-mobile hidden-desktop">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown dropdown-user">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" aria-expanded="false">
+                            <img alt="" class="img-circle mr-8" src="assets/images/avatar.jpg">
+                            <span class="username username-hide-on-mobile font-condensed">Welcome, Olivia Ong</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-default">
+                            <li class="user-info">
+                                <div class="avatar-wrapper">
+                                    <img alt="" class="img-circle" src="assets/images/avartar-big.png">
+                                </div>
+                                <div class="user-wrapper">
+                                    <h3>Olivia Ong</h3>
+                                </div>
+                            </li>
+                            <li class="divider"> </li>
+                            <li>
+                                <a href="page_user_lock_1.html"><i class="mdi mdi-lock-open mr-5"></i> Change Password </a>
+                            </li>
+                            <li>
+                                <a href="page_user_login_1.html"><i class="mdi mdi-logout mr-5"></i> Log Out </a>
+                            </li>
+                            <!--      <li>
+                               <div class="language-wrapper-mobile">
+                                    <span class="mdi mdi-earth mr-5"></span><span>Languages: </span>
+                                    <a href="javascript:void(0)" (click)="selectLang('en')">Eng</a>
+                                    <span class="divide">|</span>
+                                    <a href="javascript:void(0)" (click)="selectLang('cn')">中国</a>
+                                </div> 
+                            </li>  -->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm hidden-mobile">
+                <li class="dropdown dropdown-user">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" aria-expanded="false">
+                        <img alt="" class="img-circle mr-8" src="assets/images/avatar.jpg">
+                        <span class="username username-hide-on-mobile font-condensed">Welcome, Olivia Ong</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-default">
+                        <li class="user-info">
+                            <div class="avatar-wrapper">
+                                <img alt="" class="img-circle" src="assets/images/avartar-big.png">
+                            </div>
+                            <div class="user-wrapper">
+                                <h3>Olivia Ong</h3>
+                            </div>
+                        </li>
+                        <li class="divider"> </li>
+                        <li>
+                            <a href="page_user_lock_1.html"><i class="mdi mdi-lock-open mr-5"></i> Change Password </a>
+                        </li>
+                        <li>
+                            <a href="page_user_login_1.html"><i class="mdi mdi-logout mr-5"></i> Log Out </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
