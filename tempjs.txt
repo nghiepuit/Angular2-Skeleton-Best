@@ -1,0 +1,56 @@
+// ----------- app.js
+$(window).on('load', function() {
+    setTimeout(function() {
+        var headerHeight = $('nav.navbar').outerHeight();
+        var footerHeight = $('div.footer').outerHeight();
+        var windowHeight = $(window).height();
+        var mainHeight = windowHeight - headerHeight - footerHeight;
+        $('main.main').css("min-height", mainHeight);
+    }, 1000);
+});
+
+
+// --------------- component.js
+
+$(function() {
+
+    /*Onload Document*/
+
+    /*CALCULATE HEIGHT OF MAIN WRAPPER*/
+
+    var mainHeight = $(window).height() - $('.footer').outerHeight() - $('.navbar').outerHeight();
+    $('.main').css("min-height", mainHeight);
+
+    $(window).resize(function() {
+        var mainHeight = $(window).height() - $('.footer').outerHeight() - $('.navbar').outerHeight();
+        $('.main').css("min-height", mainHeight);
+    })
+
+    /*TOGGLE SUB MENU*/
+
+    var subMenuCollapse = false;
+    $('.nav-toggle a').click(function(e) {
+        if (!subMenuCollapse) {
+            $(this).parent().find('.sub-menu').fadeIn(100);
+            subMenuCollapse = true;
+        } else {
+            $(this).parent().find('.sub-menu').fadeOut(100);
+            subMenuCollapse = false;
+        }
+    });
+
+    /*COLLAPSE MENU ON TABLET|MOBILE*/
+
+    var menuCollapse = false;
+    $(document).on("click", "#btn-menu-toggle", function() {
+        if (!menuCollapse) {
+
+            $('aside').fadeIn(100);
+            menuCollapse = true;
+        } else {
+            $('aside').fadeOut(100);
+            menuCollapse = false;
+        }
+    });
+
+});
