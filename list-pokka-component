@@ -1,0 +1,114 @@
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { IOrder } from './../../defines/order.interface';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+import { PaginationInstance } from 'ngx-pagination';
+import {GlobalCollapseService} from '../../../../layout/shared/globalCollapse.service';
+@Component({
+	selector: 'app-order-list',
+	templateUrl: './order-list.component.html',
+	styleUrls: ['./order-list.component.css']
+})
+export class OrderListComponent implements OnInit {
+
+	title: string = 'Orders';
+	orderList: IOrder[] = [];
+	subscriptionParams: Subscription;
+	configPagination: PaginationInstance;
+	key: string = '';
+	value: number = 1;
+	isCheckAll;
+	order_noSearch : string = '';
+	date;
+	customerSearch : string = '';
+	salesmanSearch : string = '';
+	total_amtSearch : string = '';
+	statusSearch : string = '';
+
+	constructor(
+		private _routerService: Router,
+		public _globalcollapse : GlobalCollapseService
+	) { }
+
+	ngOnInit() {
+		this.configPagination = {
+			id: 'custom',
+			itemsPerPage: 10,
+			currentPage: 1
+		};
+		this.getOderList();
+	}
+
+	ngOnDestroy() {
+		if (this.subscriptionParams)
+			this.subscriptionParams.unsubscribe();
+	}
+
+	getOderList() {
+		this.orderList = [
+			{ order_no: "PO00000000001", order_date: new Date(2017, 1, 24), customer: "J.Doe", salesman: "John Smiths", total_amt: 1800, status: "Shipped" },
+			{ order_no: "PO00000000002", order_date: new Date(2016, 4, 27), customer: "J.Ramen Play", salesman: "John Smiths", total_amt: 100, status: "Hold" },
+			{ order_no: "PO00000000003", order_date: new Date(2017, 4, 5), customer: "BreadTalk", salesman: "John Smiths", total_amt: 200, status: "Open" },
+			{ order_no: "PO00000000004", order_date: new Date(2016, 5, 4), customer: "BreadTalk", salesman: "John Smiths", total_amt: 1200, status: "Hold" },
+			{ order_no: "PO00000000005", order_date: new Date(2015, 4, 24), customer: "J.BreadTalk", salesman: "John Smiths", total_amt: 800, status: "Closed" },
+			{ order_no: "PO00000000006", order_date: new Date(2017, 8, 7), customer: "Eugene Lee", salesman: "John Smiths", total_amt: 650.5, status: "Submitted" },
+			{ order_no: "PO00000000007", order_date: new Date(2016, 9, 24), customer: "J.Eugene Lee", salesman: "John Smiths", total_amt: 180, status: "Open" },
+			{ order_no: "PO00000000008", order_date: new Date(2017, 1, 24), customer: "Eugene Lee", salesman: "John Smiths", total_amt: 730.5, status: "Submitted" },
+			{ order_no: "PO00000000009", order_date: new Date(2017, 12, 1), customer: "BreadTalk", salesman: "John Smiths", total_amt: 220, status: "Submitted" },
+			{ order_no: "PO000000000010", order_date: new Date(2017, 6, 6), customer: "BreadTalk", salesman: "John Smiths", total_amt: 700, status: "Open" },
+			{ order_no: "PO000000000011", order_date: new Date(2017, 2, 28), customer: "Mine", salesman: "John Smiths", total_amt: 850, status: "Shipped" },
+			{ order_no: "PO00000000001", order_date: new Date(2017, 1, 24), customer: "J.Doe", salesman: "John Smiths", total_amt: 1800, status: "Shipped" },
+			{ order_no: "PO00000000002", order_date: new Date(2016, 4, 27), customer: "J.Ramen Play", salesman: "John Smiths", total_amt: 100, status: "Hold" },
+			{ order_no: "PO00000000003", order_date: new Date(2017, 4, 5), customer: "BreadTalk", salesman: "John Smiths", total_amt: 200, status: "Open" },
+			{ order_no: "PO00000000004", order_date: new Date(2016, 5, 4), customer: "BreadTalk", salesman: "John Smiths", total_amt: 1200, status: "Hold" },
+			{ order_no: "PO00000000005", order_date: new Date(2015, 4, 24), customer: "J.BreadTalk", salesman: "John Smiths", total_amt: 800, status: "Closed" },
+			{ order_no: "PO00000000006", order_date: new Date(2017, 8, 7), customer: "Eugene Lee", salesman: "John Smiths", total_amt: 650.5, status: "Submitted" },
+			{ order_no: "PO00000000007", order_date: new Date(2016, 9, 24), customer: "J.Eugene Lee", salesman: "John Smiths", total_amt: 180, status: "Open" },
+			{ order_no: "PO00000000008", order_date: new Date(2017, 1, 24), customer: "Eugene Lee", salesman: "John Smiths", total_amt: 730.5, status: "Submitted" },
+			{ order_no: "PO00000000009", order_date: new Date(2017, 12, 1), customer: "BreadTalk", salesman: "John Smiths", total_amt: 220, status: "Submitted" },
+			{ order_no: "PO000000000010", order_date: new Date(2017, 6, 6), customer: "BreadTalk", salesman: "John Smiths", total_amt: 700, status: "Open" },
+			{ order_no: "PO000000000011", order_date: new Date(2017, 2, 28), customer: "Mine", salesman: "John Smiths", total_amt: 850, status: "Shipped" },
+			{ order_no: "PO00000000001", order_date: new Date(2017, 1, 24), customer: "J.Doe", salesman: "John Smiths", total_amt: 1800, status: "Shipped" },
+			{ order_no: "PO00000000002", order_date: new Date(2016, 4, 27), customer: "J.Ramen Play", salesman: "John Smiths", total_amt: 100, status: "Hold" },
+			{ order_no: "PO00000000003", order_date: new Date(2017, 4, 5), customer: "BreadTalk", salesman: "John Smiths", total_amt: 200, status: "Open" },
+			{ order_no: "PO00000000004", order_date: new Date(2016, 5, 4), customer: "BreadTalk", salesman: "John Smiths", total_amt: 1200, status: "Hold" },
+			{ order_no: "PO00000000005", order_date: new Date(2015, 4, 24), customer: "J.BreadTalk", salesman: "John Smiths", total_amt: 800, status: "Closed" },
+			{ order_no: "PO00000000006", order_date: new Date(2017, 8, 7), customer: "Eugene Lee", salesman: "John Smiths", total_amt: 650.5, status: "Submitted" },
+			{ order_no: "PO00000000007", order_date: new Date(2016, 9, 24), customer: "J.Eugene Lee", salesman: "John Smiths", total_amt: 180, status: "Open" },
+			{ order_no: "PO00000000008", order_date: new Date(2017, 1, 24), customer: "Eugene Lee", salesman: "John Smiths", total_amt: 730.5, status: "Submitted" },
+			{ order_no: "PO00000000009", order_date: new Date(2017, 12, 1), customer: "BreadTalk", salesman: "John Smiths", total_amt: 220, status: "Submitted" },
+			{ order_no: "PO000000000010", order_date: new Date(2017, 6, 6), customer: "BreadTalk", salesman: "John Smiths", total_amt: 700, status: "Open" },
+			{ order_no: "PO000000000011", order_date: new Date(2017, 2, 28), customer: "Mine", salesman: "John Smiths", total_amt: 850, status: "Shipped" },
+			{ order_no: "PO00000000001", order_date: new Date(2017, 1, 24), customer: "J.Doe", salesman: "John Smiths", total_amt: 1800, status: "Shipped" },
+			{ order_no: "PO00000000002", order_date: new Date(2016, 4, 27), customer: "J.Ramen Play", salesman: "John Smiths", total_amt: 100, status: "Hold" },
+			{ order_no: "PO00000000003", order_date: new Date(2017, 4, 5), customer: "BreadTalk", salesman: "John Smiths", total_amt: 200, status: "Open" },
+			{ order_no: "PO00000000004", order_date: new Date(2016, 5, 4), customer: "BreadTalk", salesman: "John Smiths", total_amt: 1200, status: "Hold" },
+			{ order_no: "PO00000000005", order_date: new Date(2015, 4, 24), customer: "J.BreadTalk", salesman: "John Smiths", total_amt: 800, status: "Closed" },
+			{ order_no: "PO00000000006", order_date: new Date(2017, 8, 7), customer: "Eugene Lee", salesman: "John Smiths", total_amt: 650.5, status: "Submitted" },
+			{ order_no: "PO00000000007", order_date: new Date(2016, 9, 24), customer: "J.Eugene Lee", salesman: "John Smiths", total_amt: 180, status: "Open" },
+			{ order_no: "PO00000000008", order_date: new Date(2017, 1, 24), customer: "Eugene Lee", salesman: "John Smiths", total_amt: 730.5, status: "Submitted" },
+			{ order_no: "PO00000000009", order_date: new Date(2017, 12, 1), customer: "BreadTalk", salesman: "John Smiths", total_amt: 220, status: "Submitted" },
+			{ order_no: "PO000000000010", order_date: new Date(2017, 6, 6), customer: "BreadTalk", salesman: "John Smiths", total_amt: 700, status: "Open" },
+			{ order_no: "PO000000000011", order_date: new Date(2017, 2, 28), customer: "Mine", salesman: "John Smiths", total_amt: 850, status: "Shipped" },
+			{ order_no: "PO00000000001", order_date: new Date(2017, 1, 24), customer: "J.Doe", salesman: "John Smiths", total_amt: 1800, status: "Shipped" },
+			{ order_no: "PO00000000002", order_date: new Date(2016, 4, 27), customer: "J.Ramen Play", salesman: "John Smiths", total_amt: 100, status: "Hold" },
+			{ order_no: "PO00000000003", order_date: new Date(2017, 4, 5), customer: "BreadTalk", salesman: "John Smiths", total_amt: 200, status: "Open" },
+			{ order_no: "PO00000000004", order_date: new Date(2016, 5, 4), customer: "BreadTalk", salesman: "John Smiths", total_amt: 1200, status: "Hold" },
+			{ order_no: "PO00000000005", order_date: new Date(2015, 4, 24), customer: "J.BreadTalk", salesman: "John Smiths", total_amt: 800, status: "Closed" },
+			{ order_no: "PO00000000006", order_date: new Date(2017, 8, 7), customer: "Eugene Lee", salesman: "John Smiths", total_amt: 650.5, status: "Submitted" },
+			{ order_no: "PO00000000007", order_date: new Date(2016, 9, 24), customer: "J.Eugene Lee", salesman: "John Smiths", total_amt: 180, status: "Open" },
+			{ order_no: "PO00000000008", order_date: new Date(2017, 1, 24), customer: "Eugene Lee", salesman: "John Smiths", total_amt: 730.5, status: "Submitted" },
+			{ order_no: "PO00000000009", order_date: new Date(2017, 12, 1), customer: "BreadTalk", salesman: "John Smiths", total_amt: 220, status: "Submitted" },
+			{ order_no: "PO000000000010", order_date: new Date(2017, 6, 6), customer: "BreadTalk", salesman: "John Smiths", total_amt: 700, status: "Open" },
+			{ order_no: "PO000000000011", order_date: new Date(2017, 2, 28), customer: "Mine", salesman: "John Smiths", total_amt: 850, status: "Shipped" },
+		];
+	}
+
+	sort(key: string) {
+		this.key = key;
+		this.value = -(this.value);
+	}
+	setItemPerPage(value: number){
+		this.configPagination.itemsPerPage = value;
+	}
+}
