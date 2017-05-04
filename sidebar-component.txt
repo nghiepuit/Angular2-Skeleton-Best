@@ -1,0 +1,95 @@
+<aside class="sidebar " [ngClass]="[_globalcollapse.desktopCollapse,this._globalcollapse.asideMenu]">
+    <ul class="nav nav-sidebar">
+        <li [routerLinkActive]="['active']">
+            <a (click)="blockMenu('nonesub')" [routerLink]="['/customer']" class="font-condensed menu-elem">
+                <i class="mdi mdi-account-multiple"></i><span class="title">CUSTOMERS</span>
+            </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a (click)="blockMenu('nonesub')" [routerLink]="['/product']" class="font-condensed menu-elem">
+                <i class="mdi mdi-archive"></i><span class="title">PRODUCTS</span>
+            </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a (click)="blockMenu('nonesub')" [routerLink]="['/order']" class="font-condensed menu-elem">
+                <i class="mdi mdi-clipboard-text"></i><span class="title">ORDERS</span>
+            </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a (click)="blockMenu('nonesub')" [routerLink]="['/promotions']" class="font-condensed menu-elem">
+                <i class="mdi mdi-gift"></i><span class="title">PROMOTIONS</span>
+            </a>
+        </li>
+        <li class="nav-toggle" [routerLinkActive]="['active']" class="config-link-menu">
+            <a href="javascript:;" class="nav-link font-condensed menu-elem" (click)="toggleMenu()">
+                <i class="mdi mdi-settings"></i><span class="title">CONFIGURATIONS</span>
+            </a>
+            <ul class="sub-menu" [style.display]=" ( isShow == true || this._globalcollapse.subMenu == 'block' )? 'block' : ''" *ngIf=" this._globalcollapse.desktopCollapse != 'desktop-collapse' ">
+                <li class="nav-item" >
+                    <a [routerLinkActive]="['active']"  (click)="blockMenu('sub')" [routerLink]="['/configuration/delivery-dates']" class="nav-link font-condensed" >
+                        <span class="title">DELIVERY DATES</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a [routerLinkActive]="['active']"  (click)="blockMenu('sub')" [routerLink]="['/configuration/catalog-mapping']" class="nav-link font-condensed"> -->
+                    <a class="nav-link font-condensed">
+                        <span class="title">CATALOG MAPPING</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLinkActive]="['active']"  (click)="blockMenu('sub')" [routerLink]="['/configuration/user']" class="nav-link font-condensed">
+                        <span class="title">USERS</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLinkActive]="['active']"  (click)="blockMenu('sub')"  [routerLink]="['/configuration/user-role']" class="nav-link font-condensed">
+                        <span class="title">USER ROLES</span>
+                    </a>
+                </li>
+                <li class="nav-item" >
+                    <a [routerLinkActive]="['active']"  (click)="blockMenu('sub')"  [routerLink]="['/configuration/sync-data']" class="nav-link font-condensed">
+                        <span class="title">DATA SYNCHRONIZATION </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a [routerLinkActive]="['active']"  (click)="blockMenu('sub')"  [routerLink]="['/configuration/data_purging_list']" class="nav-link font-condensed"> -->
+                    <a class="nav-link font-condensed">
+                        <span class="title">DATA PURGING</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="sub-menu sub-menu-collapse">
+                <li class="nav-item">
+                    <a [routerLinkActive]="['active']"  (click)="blockMenu('sub')" [routerLink]="['/configuration/delivery-dates']" class="nav-link font-condensed" >
+                        <span class="title">DELIVERY DATES</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLinkActive]="['active']"  (click)="blockMenu('sub')" [routerLink]="['/configuration/catalog-mapping']" class="nav-link font-condensed">
+                        <span class="title">CATALOG MAPPING</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLinkActive]="['active']"  (click)="blockMenu('sub')" [routerLink]="['/configuration/user']" class="nav-link font-condensed">
+                        <span class="title">USERS</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLinkActive]="['active']"  (click)="blockMenu('sub')"  [routerLink]="['/configuration/user-role']" class="nav-link font-condensed">
+                        <span class="title">USERS ROLES</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLinkActive]="['active']"  (click)="blockMenu('sub')"  [routerLink]="['/configuration/sync-data']" class="nav-link font-condensed">
+                        <span class="title">DATA SYNCHONIZATION</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a [routerLinkActive]="['active']"  (click)="blockMenu('sub')"  [routerLink]="['/configuration/data_purging_list']" class="nav-link font-condensed">
+                        <span class="title">DATA PURGING</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</aside>
