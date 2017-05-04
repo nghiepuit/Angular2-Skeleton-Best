@@ -1,0 +1,315 @@
+<main class="main" [ngClass]=[_globalcollapse.desktopCollapse]>
+    <div class="title-wrapper">
+        <h2 class="sub-header font-condensed">{{ title }}</h2>
+        <div class="control-stable hidden-sm hidden-md hidden-lg">
+            <a class="btn btn-primary mr-5" [routerLink]="['/order/select-customer']"><i class="mdi mdi-plus mr-5"></i>New Order</a>
+            <div class="dropdown dropdown-export">
+                <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary a-btn-dropdown mr-5" href="javascript:void(0)"><i class="mdi mdi-export mr-5"></i>
+                Export <span class="caret"></span>
+            </a>
+                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#">Order</a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="#"><i class="mdi mdi-file-pdf mr-5"></i>PDF</a></li>
+                            <li><a href="#"><i class="mdi mdi-file-excel mr-5"></i>Excel</a></li>
+                            <li><a href="#"><i class="mdi mdi-file-chart mr-5"></i>Report</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#">Invoice</a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="#"><i class="mdi mdi-file-pdf mr-5"></i>PDF</a></li>
+                            <li><a href="#"><i class="mdi mdi-file-excel mr-5"></i>Excel</a></li>
+                            <li><a href="#"><i class="mdi mdi-file-chart mr-5"></i>Report</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <a class="btn btn-adv-search btn-primary" role="button" data-toggle="collapse" href="#block-advance-search" aria-expanded="false" aria-controls="block-advance-search"><i class="mdi mdi-magnify mr-5"></i><span>Advanced Search</span></a>
+        </div>
+        <div class="control-float hidden-xs">
+            <a class="btn btn-primary mr-5" [routerLink]="['/order/select-customer']"><i class="mdi mdi-plus mr-5"></i>New Order</a>
+            <div class="dropdown dropdown-export">
+                <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary a-btn-dropdown mr-5" href="javascript:void(0)"><i class="mdi mdi-export mr-5"></i>
+                Export <span class="caret"></span>
+            </a>
+                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#">Order</a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="#"><i class="mdi mdi-file-pdf mr-5"></i>PDF</a></li>
+                            <li><a href="#"><i class="mdi mdi-file-excel mr-5"></i>Excel</a></li>
+                            <li><a href="#"><i class="mdi mdi-file-chart mr-5"></i>Report</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#">Invoice</a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="#"><i class="mdi mdi-file-pdf mr-5"></i>PDF</a></li>
+                            <li><a href="#"><i class="mdi mdi-file-excel mr-5"></i>Excel</a></li>
+                            <li><a href="#"><i class="mdi mdi-file-chart mr-5"></i>Report</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <a class="btn btn-adv-search btn-primary" role="button" data-toggle="collapse" href="#block-advance-search" aria-expanded="false" aria-controls="block-advance-search"><i class="mdi mdi-magnify mr-5"></i><span>Advanced Search</span></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="collapse block-advance-search" id="block-advance-search">
+                        <div class="well">
+                            <form class="form-horizontal">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label text-left col-xs-12 col-sm-5">Order No </label>
+                                            <div class="col-xs-12 col-sm-7">
+                                                <input type="text" class="form-control none-mb-sm">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label text-left col-xs-12 col-sm-5">Order Date</label>
+                                            <div class="col-xs-12 col-sm-7">
+                                                <input type="text" class="form-control none-mb-sm">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label text-left col-xs-12 col-sm-5">Customer </label>
+                                            <div class="col-xs-12 col-sm-7">
+                                                <input type="text" class="form-control none-mb-sm">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label text-left col-xs-12 col-sm-5">Salesman </label>
+                                            <div class="col-xs-12 col-sm-7">
+                                                <input type="text" class="form-control none-mb-sm">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label text-left col-xs-12 col-sm-5">Total Amt </label>
+                                            <div class="col-xs-12 col-sm-7">
+                                                <div class="select-input-component">
+                                                    <select class="form-control none-mb-sml">
+                                                        <option><span>></span></option>
+                                                        <option><span><</span></option>
+                                                        <option><span>=</span></option>
+                                                    </select>
+                                                    <input type="text" class="form-control none-mb-sm">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label text-left col-xs-12 col-sm-5">Status </label>
+                                            <div class="col-xs-12 col-sm-7">
+                                                <select class="form-control">
+                                                    <option>Open</option>
+                                                    <option>Hold</option>
+                                                    <option>Submitted</option>
+                                                    <option>Closed</option>
+                                                    <option>Shipped</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 text-center">
+                                        <hr class="hr-inside">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 text-center">
+                                        <button type="submit" class="btn btn-primary mr-5"><i class="mdi mdi-magnify mr-5"></i>Search</button>
+                                        <button type="submit" class="btn btn-default"><i class="mdi mdi-close mr-5"></i>Reset</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="table-responsive mt-10">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label class="rememberme check mt-checkbox mt-checkbox-outline">
+                                            <input type="checkbox" name="remember" value="1" [(ngModel)]="isCheckAll" [checked]="isCheckAll">
+                                            <span></span>
+                                        </label>
+                                    </th>
+                                    <th class="text-center">Action</th>
+                                    <th class="td-nowrap text-center">
+                                        <a (click)="sort('order_no')">
+                                            <span class="mr-8">Order No</span>
+                                            <span class="caret-up" [class.active]="key == 'order_no' && value == 1"></span>
+                                            <span class="caret-down" [class.active]="key == 'order_no' && value == -1"></span>
+                                        </a>
+                                    </th>
+                                    <th class="td-nowrap text-center">
+                                        <a (click)="sort('order_date')">
+                                            <span class="mr-8">Order Date</span>
+                                            <span class="caret-up" [class.active]="key == 'order_date' && value == 1"></span>
+                                            <span class="caret-down" [class.active]="key == 'order_date' && value == -1"></span>
+                                        </a>
+                                    </th>
+                                    <th class="td-nowrap text-center">
+                                        <a (click)="sort('customer')">
+                                            <span class="mr-8">Customer</span>
+                                            <span class="caret-up" [class.active]="key == 'customer' && value == 1"></span>
+                                            <span class="caret-down" [class.active]="key == 'customer' && value == -1"></span>
+                                        </a>
+                                    </th>
+                                    <th class="td-nowrap text-center">
+                                        <a (click)="sort('salesman')">
+                                            <span class="mr-8">Salesman</span>
+                                            <span class="caret-up" [class.active]="key == 'salesman' && value == 1"></span>
+                                            <span class="caret-down" [class.active]="key == 'salesman' && value == -1"></span>
+                                        </a>
+                                    </th>
+                                    <th class="td-nowrap text-center">
+                                        <a (click)="sort('total_amt')">
+                                            <p class="mr-8 p-inline"><span>Total<br>Amt</span></p>
+                                            <span class="caret-up" [class.active]="key == 'total_amt' && value == 1"></span>
+                                            <span class="caret-down" [class.active]="key == 'total_amt' && value == -1"></span>
+                                        </a>
+                                    </th>
+                                    <th class="td-nowrap text-center">
+                                        <a (click)="sort('status')">
+                                            <span class="mr-8">Status</span>
+                                            <span class="caret-up" [class.active]="key == 'status' && value == 1"></span>
+                                            <span class="caret-down" [class.active]="key == 'status' && value == -1"></span>
+                                        </a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td class="td-nowrap text-center">
+                                        <a class="btn btn-icon" role="button" data-toggle="tooltip" title="Clear"><i class="mdi mdi-filter-remove"></i></a>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" [(ngModel)]="order_noSearch">
+                                    </td>
+                                    <td>
+                                        <div class='input-group'>
+                                            <input type="text" class="form-control form-control-datepicker" readonly date-picker [(ngModel)]="date" />
+                                            <span class="input-group-addon">
+                                                     <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" [(ngModel)]="customerSearch">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" [(ngModel)]="salesmanSearch">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" [(ngModel)]="total_amtSearch">
+                                    </td>
+                                    <td>
+                                        <select class="form-control" [(ngModel)]="statusSearch">
+                                            <option value="Open">Open</option>
+                                            <option value="Hold">Hold</option>
+                                            <option value="Submitted">Submitted</option>
+                                            <option value="Closed">Closed</option>
+                                            <option value="Shipped">Shipped</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <ng-template [ngIf]="orderList.length > 0">
+                                    <tr *ngFor="let order of orderList | sort :key :value | filter :order_noSearch :order_dateFromSearch :order_dateToSearch :customerSearch :salesmanSearch :total_amtSearch :statusSearch | paginate :configPagination ">
+                                        <td>
+                                            <label class="rememberme check mt-checkbox mt-checkbox-outline">
+                                                <input type="checkbox" name="remember" value="1" [checked]="isCheckAll">
+                                                <span></span>
+                                            </label>
+                                        </td>
+                                        <td class="text-center td-nowrap">
+                                            <a class="btn btn-icon mr-5" role="button" data-toggle="tooltip" title="View"><i class="mdi mdi-eye"></i></a>
+                                            <a class="btn btn-icon" role="button" data-toggle="tooltip" title="Edit" *ngIf="(order.status == 'Open' || order.status == 'Hold'); else elseBlock"><i class="mdi mdi-pencil"></i></a>
+                                            <ng-template #elseBlock>
+                                                <a class="btn btn-icon" disabled role="button" data-toggle="tooltip" title="Edit"><i class="mdi mdi-pencil"></i></a>
+                                            </ng-template>
+                                        </td>
+                                        <td>{{ order.order_no }}</td>
+                                        <td>{{ order.order_date | date: 'dd/MM/yyyy' }}</td>
+                                        <td>{{ order.customer }}</td>
+                                        <td>{{ order.salesman }}</td>
+                                        <td class="text-right">{{ order.total_amt | currency : 'USD' : true : '1.2-2' }}</td>
+                                        <td>{{ order.status }}</td>
+                                    </tr>
+                                </ng-template>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- pagination -->
+            <div class="">
+                <pagination-template #p="paginationApi" [id]="configPagination.id" (pageChange)="configPagination.currentPage = $event" maxSize="5">
+                </pagination-template>
+            </div>
+            <div class="row mt-15">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="table-display-control">
+                        <span>Display</span>
+                        <select class="form-control" #t (change)="setItemPerPage(t.value)">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                        <span>/ {{orderList.length}} record(s)</span>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="pagination-wrapper">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li [class.disabled]="p.isFirstPage()">
+                                    <a aria-label="Previous" (click)="p.setCurrent(1)">
+                                        <span aria-hidden="true"><<</span>
+                                    </a>
+                                </li>
+                                <li [class.disabled]="p.isFirstPage()">
+                                    <a aria-label="Previous" (click)="p.previous()">
+                                        <span aria-hidden="true"><</span>
+                                    </a>
+                                </li>
+                                <li *ngFor="let page of p.pages" [class.active]="p.getCurrent() === page.value" (click)="p.setCurrent(page.value)">
+                                    <a class="page-link"><span class="sr-only">(current)</span>{{ page.label }}</a>
+                                </li>
+                                <li [class.disabled]="p.isLastPage()">
+                                    <a aria-label="Next" (click)="p.next()">
+                                        <span aria-hidden="true">></span>
+                                    </a>
+                                </li>
+                                <li [class.disabled]="p.isLastPage()">
+                                    <a aria-label="Next" (click)="p.setCurrent(p.getLastPage())">
+                                        <span aria-hidden="true">>></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
