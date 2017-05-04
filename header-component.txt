@@ -1,0 +1,46 @@
+import { Component, OnInit } from '@angular/core';
+
+// import { TranslateService } from '../../../translate';
+import {GlobalCollapseService} from '../../globalCollapse.service';
+
+@Component({
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
+})
+export class HeaderComponent implements OnInit {
+
+  	public translatedText: string;
+    public supportedLanguages: any[];
+
+    desktopCollapse : string;
+    constructor(
+                public _globalcollapse : GlobalCollapseService) {
+    }
+
+    ngOnInit() {}
+     menuCollapse(){
+      if(this._globalcollapse.desktopCollapse == "desktop-collapse")
+      {
+        this._globalcollapse.desktopCollapse = "";
+      }
+      else{
+        this._globalcollapse.desktopCollapse = "desktop-collapse";
+      }
+    }
+    menuAside(){
+      this._globalcollapse.isCliked = !this._globalcollapse.isCliked;
+      if(this._globalcollapse.isCliked == true){
+        if(this._globalcollapse.asideMenu == '')
+        {
+          this._globalcollapse.asideMenu = 'asideDisplay';
+        }
+        else 
+          this._globalcollapse.asideMenu = '';
+      }
+      if(this._globalcollapse.isCliked == false)
+      {
+          this._globalcollapse.asideMenu = '';
+      }
+    }
+}
