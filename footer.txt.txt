@@ -6,3 +6,14 @@
     <div class="footer hidden-md hidden-lg text-center">
         <span>Copyright © 2013 Pokka Singapore</span>
     </div>
+
+import { Injectable } from '@angular/core';
+
+
+@Injectable()
+export class GlobalCollapseService {
+	desktopCollapse: string = "";
+	subMenu: string = "";
+	asideMenu: string = "";
+	isCliked: boolean = false;
+}
