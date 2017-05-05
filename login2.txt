@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="#">
+    <title>Dashboard Template for Bootstrap</title>
+    <!-- Material-Icon core CSS -->
+    <link href="css/materialdesignicons.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="css/pokka.css" rel="stylesheet">    
+    <!-- IMPORT GOOGLE FONT -->
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
+    </style>
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><img src="images/pokka-logo-red.png" alt=""></a>
+            </div>
+        </div>
+    </nav>
+    <div class="login-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="login-wrapper">
+                    <!-- BEGIN LOGIN FORM -->
+                    <form class="login-form" action="index.html" method="post" novalidate="novalidate">
+                        <h2 class="login-title font-condensed">POKKA SALES APPLICATION</h2>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1"><i class="mdi mdi-account"></i></span>
+                                <input type="text" class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon2"><i class="mdi mdi-lock"></i></span>
+                                <input type="password" class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Password" name="username" aria-describedby="basic-addon2">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="rememberme check mt-checkbox mt-checkbox-outline">
+                                <input type="checkbox" name="remember" value="1">Keep me signed in
+                                <span></span>
+                            </label>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-info">SIGN IN</button>
+                            <div class="action-wrapper">
+                                <a href="javascript:;">Sign Up</a><span>|</span><a href="javascript:;">Forgot Password?</a>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- END LOGIN FORM -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer hidden-xs hidden-sm">
+        <div class="pull-left">Copyright © 2013 Pokka Singapore</div>
+        <div class="pull-right">Customer Care Hotline: 1800-MY-POKKA (1800-69-76552)</div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="footer hidden-md hidden-lg text-center">
+        <span>Copyright © 2013 Pokka Singapore</span>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js "></script>
+    <script src="js/bootstrap.min.js "></script>
+    <script>
+    </script>
+</body>
+
+</html>
